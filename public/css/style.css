@@ -877,40 +877,40 @@ ul.conta li a:hover {
 
 /**  inner page css **/
 
-.inner_page ul.email {
+.main ul.email {
   margin-top: -3px;
 }
 
-.inner_page .header {
+.main .header {
   box-shadow: 0 0 10px rgba(217, 98, 38, 0.82);
   padding: 35px 30px;
   margin-bottom: 10px;
 }
 
-.inner_page .navigation.navbar {
+.main .navigation.navbar {
   margin-top: -6px;
   transform: rotate(0deg);
   float: right;
   padding: 0;
 }
 
-.inner_page .navigation.navbar-dark .navbar-nav .nav-link {
+.main .navigation.navbar-dark .navbar-nav .nav-link {
   writing-mode: inherit;
   padding: 7px 28px;
 }
 
-.inner_page .navigation.navbar-expand-md .navbar-nav {
+.main .navigation.navbar-expand-md .navbar-nav {
   flex-direction: row !important;
 }
 
-.inner_page .about {
+.main .about {
   margin-top: 90px;
 }
 
-.inner_page .contact {
+.main .contact {
   padding-bottom: 0;
 }
 
-.inner_page .honey_bg {
+.main .honey_bg {
   padding-top: 90px;
 }
