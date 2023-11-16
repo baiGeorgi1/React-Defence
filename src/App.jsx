@@ -1,30 +1,27 @@
 import { Route, Routes } from "react-router-dom";
-import Quality from "./components/Quality";
-import ContactUs from "./components/ContactUs";
-import About from "./components/About";
-import Footer from "./components/Footer";
-import Honey from "./components/Honey";
-import Header from "./components/Header";
-import Spinner from "./components/Spinner";
-import Navigation from "./components/Navigation";
+import Footer from "./components/footer/Footer";
+import Honey from "./components/home/Honey";
+import Header from "./components/header/Header";
+import Spinner from "./components/spinner/Spinner";
+import About from "./components/about/About";
+import ContactUs from "./components/contactUs/ContactUs";
+import Quality from "./components/quality/Quality";
+import Home from "./components/home/Home";
+
+// import Login from "./components/users/login/Login";
 
 function App() {
   return (
     <div>
-      {/* <Spinner /> */}
-      <Navigation />
+      <Spinner />
+      <Header />
       <Routes>
-        <Route path="/" element={<Quality />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/catalog" element={<Honey />} />
+        <Route path="/quality" element={<Quality />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/about" element={<About />} />
       </Routes>
-      {/* <Header /> */}
-      {/* Honey for homePage */}
-
-      {/* <Quality /> */}
-
-      {/* <About /> */}
-
-      {/* <ContactUs /> */}
-
       <Footer />
     </div>
   );

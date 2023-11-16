@@ -43,12 +43,11 @@ export default function Footer() {
                 <h3>Adderess</h3>
                 <ul className="conta">
                   <li>
-                    Healing Center, oo W Street name, <br />
                     Loram ipusum
+                    <br />
                   </li>
                   <li>
                     (+71) 8522369417 <br />
-                    (+71) 8522369417
                   </li>
                   <li>
                     {" "}
@@ -114,7 +113,7 @@ export default function Footer() {
             <div className="row">
               <div className="col-md-12">
                 <p>
-                  © 2020 All Rights Reserved.{" "}
+                  © 2020 All Rights Reserved. {"Edited by Georgi Georgiev."}
                   <a href="https://html.design/"> Free html Templates</a>
                 </p>
               </div>

@@ -317,22 +317,22 @@ button {
   left: 0;
 }
 
-.logo a {
-  font-weight: 600px;
+.logo {
+  text-align: center;
+  font-weight: 100px;
   font-size: 40px;
   writing-mode: horizontal-tb;
-  text-orientation: center;
 }
 
 .header_full_banne {
   padding-left: 125px;
 }
 
-.header {
+/* .header {
   width: 100%;
   height: 107px;
   padding: 27px 30px;
-}
+} */
 
 .di_mr0 {
   display: none;
@@ -379,7 +379,6 @@ ul.email {
   padding-top: 1px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   flex-wrap: wrap;
 }
 
@@ -697,6 +696,8 @@ ul.conta_top li a {
 /** footer **/
 
 .footer {
+  margin: auto;
+  width: auto;
   padding-top: 120px;
   text-align: center;
 }
@@ -883,7 +884,7 @@ ul.conta li a:hover {
 
 .main .header {
   box-shadow: 0 0 10px rgba(217, 98, 38, 0.82);
-  padding: 35px 30px;
+
   margin-bottom: 10px;
 }
 
