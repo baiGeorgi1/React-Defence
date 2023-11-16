@@ -19,6 +19,8 @@ export default function Quality() {
             <div className="quality-box ">
               <figure>
                 <img src="images/quality1.png" alt="#" />
+                <h1>hi</h1>
+                <button>details</button>
               </figure>
             </div>
           </div>
