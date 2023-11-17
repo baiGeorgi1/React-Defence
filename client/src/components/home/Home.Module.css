@@ -1,0 +1,42 @@
+.my-css {
+  margin-bottom: 350px;
+  margin-left: 35px;
+  h2 {
+    font-size: 3rem;
+    font-family: cursive;
+    color: rgb(255, 102, 0);
+  }
+  p {
+    font-size: 2rem;
+    font-style: italic;
+    font-family: fantasy;
+    color: rgb(196, 193, 0);
+  }
+}
+.image {
+  padding-right: 50px;
+  margin-left: 200px;
+  width: 500px;
+  height: 500px;
+}
+.our_shop {
+  font-size: 17px;
+  background: #d96226;
+  max-width: 171px;
+  width: 100%;
+  height: 48px;
+  display: block;
+  line-height: 48px;
+  transition: ease-in all 0.5s;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  z-index: 999;
+  border-radius: 30px;
+}
+
+.our_shop:hover {
+  background: #000000;
+  color: #fff;
+  transition: ease-in all 0.5s;
+}

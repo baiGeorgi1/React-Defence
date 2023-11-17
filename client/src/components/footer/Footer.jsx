@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer>
@@ -13,27 +15,27 @@ export default function Footer() {
                 </p>
                 <ul className="social_icon">
                   <li>
-                    <a href="Javascript:void(0)">
+                    <Link to="#">
                       <i className="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="Javascript:void(0)">
+                    <Link to="#">
                       <i className="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="Javascript:void(0)">
+                    <Link to="#">
                       <i
                         className="fa fa-linkedin-square"
                         aria-hidden="true"
                       ></i>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="Javascript:void(0)">
+                    <Link to="#">
                       <i className="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -51,7 +53,7 @@ export default function Footer() {
                   </li>
                   <li>
                     {" "}
-                    <a href="Javascript:void(0)"> demo@gmail.com</a>
+                    <Link to="#"> demo@gmail.com</Link>
                   </li>
                 </ul>
               </div>
@@ -61,19 +63,19 @@ export default function Footer() {
                 <h3>Links</h3>
                 <ul className="fullink">
                   <li>
-                    <a href="index.html">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <a href="about.html">About</a>
+                    <Link to="/about">About</Link>
                   </li>
                   <li>
-                    <a href="shop.html">Shop</a>
+                    <Link to="/catalog">Catalog</Link>
                   </li>
                   <li>
-                    <a href="quality.html">Quality</a>
+                    <Link to="/recipes">Recipes</Link>
                   </li>
                   <li>
-                    <a href="contact.html">Contact</a>
+                    <Link to="/contact-us">Contact</Link>
                   </li>
                 </ul>
               </div>
@@ -114,7 +116,7 @@ export default function Footer() {
               <div className="col-md-12">
                 <p>
                   © 2020 All Rights Reserved. {"Edited by Georgi Georgiev."}
-                  <a href="https://html.design/"> Free html Templates</a>
+                  <Link to="https://html.design/"> Free html Templates</Link>
                 </p>
               </div>
             </div>
