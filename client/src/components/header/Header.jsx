@@ -34,8 +34,8 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/recipes">
-                    AddInfo
+                  <Link className="nav-link" to="/add">
+                    Добави
                   </Link>
                 </li>
                 <li className="nav-item ">
