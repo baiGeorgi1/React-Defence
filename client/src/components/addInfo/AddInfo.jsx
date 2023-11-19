@@ -1,4 +1,4 @@
-export default function Honey() {
+export default function AddInfo() {
   return (
     <div className="honey_bg">
       <div className="container">

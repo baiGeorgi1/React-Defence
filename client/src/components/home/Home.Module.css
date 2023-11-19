@@ -2,6 +2,7 @@
   margin-bottom: 350px;
   margin-left: 35px;
   h2 {
+    text-align: center;
     font-size: 3rem;
     font-family: cursive;
     color: rgb(255, 102, 0);
@@ -9,13 +10,14 @@
   p {
     font-size: 2rem;
     font-style: italic;
-    font-family: fantasy;
-    color: rgb(196, 193, 0);
+    font-family: cursive;
+    color: rgb(255, 102, 0);
   }
 }
 .image {
   padding-right: 50px;
   margin-left: 200px;
+  margin-top: 10px;
   width: 500px;
   height: 500px;
 }
@@ -39,4 +41,8 @@
   background: #000000;
   color: #fff;
   transition: ease-in all 0.5s;
+}
+.col-md-5 {
+  position: static;
+  margin-top: -350px;
 }
