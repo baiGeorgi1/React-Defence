@@ -33,7 +33,7 @@ const Home = () => {
             </p>
             <br />
             <br />
-            <Link class="our_shop" to="/catalog">
+            <Link className="our_shop" to="/catalog">
               Към каталога
             </Link>
           </div>

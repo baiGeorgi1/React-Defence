@@ -62,22 +62,6 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  letter-spacing: 0;
-  font-weight: normal;
-  position: relative;
-  padding: 0;
-  font-weight: normal;
-  line-height: normal;
-  color: #fff;
-  margin: 0;
-}
-
 h1 {
   font-size: 24px;
 }
@@ -108,17 +92,6 @@ h6 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  color: #fff;
-  text-decoration: none !important;
-  opacity: 1;
 }
 
 button:focus {
@@ -223,15 +196,6 @@ button {
 
 .titlepage {
   padding-bottom: 60px;
-}
-
-.titlepage h2 {
-  font-size: 45px;
-  color: #fff;
-  line-height: 50px;
-  font-weight: bold;
-  padding: 0;
-  display: inline-block;
 }
 
 .d_flex {
@@ -573,13 +537,7 @@ ul.conta_top li a {
 /** quality **/
 
 .quality {
-  padding-top: 90px;
-}
-
-.quality .titlepage p {
-  padding-top: 15px !important;
-  line-height: 30px;
-  font-size: 17px;
+  padding-top: 20px;
 }
 
 .quality-box {
