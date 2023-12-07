@@ -1,11 +1,22 @@
 label {
-  margin: 10px auto;
+  display: block;
+  margin: 5px auto;
+}
+.form-control {
+  width: 80%;
+  height: 2rem;
 }
 
 .add-form {
-  width: 30%;
+  border-radius: 0.25rem;
+  width: 40%;
   text-align: center;
-  margin: 0px 550px 0px 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+
+  background: linear-gradient(to bottom, #7a4017, #7a4c25, #c07c0e);
 }
 .add-button {
   font-size: 18px;
@@ -22,6 +33,7 @@ label {
   border-radius: 40px;
   padding: 13px 0;
   margin: 0 auto;
+  margin-top: 10px;
 }
 .btn-primary {
   color: #fff;
@@ -33,7 +45,7 @@ label {
   background-color: #65995d;
   border-color: #65995d;
 }
-textarea {
+.form-textarea {
   height: 250px;
-  grid-row: 10;
+  resize: vertical;
 }

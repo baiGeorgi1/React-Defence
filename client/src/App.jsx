@@ -1,33 +1,35 @@
 import { Route, Routes } from "react-router-dom";
-import { createItem } from "./API/itemApi";
+import { AuthProvider } from "./contexts/auth";
 
-import Footer from "./components/footer/Footer";
-import Catalog from "./components/catalog/Catalog";
-import Header from "./components/header/Header";
 import Spinner from "./components/spinner/Spinner";
-import About from "./components/about/About";
-import ContactUs from "./components/contactUs/ContactUs";
-import AddInfo from "./components/addInfo/AddInfo";
+import Header from "./components/header/Header";
 import Home from "./components/home/Home";
-import Login from "./components/user/Login";
-
-// import Login from "./components/users/login/Login";
+import UserPaths from "./components/UsersPaths";
+import Catalog from "./components/catalog/Catalog";
+import More from "./components/more/More";
+//import ContactUs from "./components/contactUs/ContactUs";
+import CreateItem from "./components/createItem/CreateItem";
+import Footer from "./components/footer/Footer";
+import ErrorPage from "./components/404/404";
 
 function App() {
   return (
-    <div>
-      <Spinner />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/add" element={<AddInfo createItem={createItem} />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-      <Footer />
-    </div>
+    <AuthProvider>
+      <div>
+        {/* <Spinner /> */}
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/users/*" element={<UserPaths />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/catalog/more/:itemId" element={<More />} />
+          <Route path="/add" element={<CreateItem />} />
+          <Route path="/*" element={<ErrorPage />} />
+          {/* <Route path="/about" element={<About />} /> */}
+        </Routes>
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 }
 

@@ -1,13 +1,23 @@
-const URL = "http://localhost:3030/jsonstore/honey";
+import * as request from '../library/request';
 
-export const createItem = async (formValues) => {
-  console.log(formValues);
-  const response = await fetch(URL, {
-    method: "post",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(formValues),
-  });
-  return await response.json();
+const URL = "http://localhost:3030/data/honey";
+
+export const getAll = async () => {
+
+  const result = await request.get(URL);
+
+  return result;
+};
+
+export const getItem = async (gameId) => {
+  const result = await request.get(`${URL}/${gameId}`);
+
+  return result;
+};
+
+export const addItem = async (formValues) => {
+  const result = await request.post(URL, formValues);
+  console.log(result);
+
+  return result;
 };

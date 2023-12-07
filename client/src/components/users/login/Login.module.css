@@ -1,4 +1,4 @@
-body {
+.modal-body {
   margin: 0;
   padding: 0;
   display: flex;
@@ -8,7 +8,7 @@ body {
   font-family: "Jost", sans-serif;
   background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 }
-.main {
+/* .main {
   width: 350px;
   height: 500px;
   background: red;
@@ -17,9 +17,9 @@ body {
     no-repeat center/ cover;
   border-radius: 10px;
   box-shadow: 5px 20px 50px #000;
-}
-#chk {
-  display: none;
+} */
+a {
+  color: rgb(165, 136, 42);
 }
 .signup {
   position: relative;

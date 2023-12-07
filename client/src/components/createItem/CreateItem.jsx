@@ -1,17 +1,24 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import "./AddInfo.Module.css";
-import { useForm } from "../../hooks/useForm";
+import Authentication from "../../contexts/auth";
 
-const AddInfo = ({ createItem }) => {
-  const { formValues, onChangeHandler, onSubmit } = useForm(
+import { useForm } from "../../hooks/useForm";
+import { useContext } from "react";
+
+import "./CreateItem.Module.css";
+
+const CreateItem = () => {
+  const { CreateItemHandler } = useContext(Authentication);
+
+  const { formValues, onChange, onSubmit } = useForm(
     {
       name: "",
       imageUrl: "",
       description: "",
     },
-    createItem,
+    CreateItemHandler,
   );
+
   return (
     <Form className="add-form" onSubmit={onSubmit}>
       <Form.Group controlId="exampleForm.ControlInput1">
@@ -19,9 +26,9 @@ const AddInfo = ({ createItem }) => {
         <Form.Control
           type="text"
           name="name"
-          placeholder="...име"
+          placeholder="име..."
           value={formValues.name}
-          onChange={onChangeHandler}
+          onChange={onChange}
         />
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlInput1">
@@ -30,18 +37,19 @@ const AddInfo = ({ createItem }) => {
           type="text"
           name="imageUrl"
           value={formValues.imageUrl}
-          onChange={onChangeHandler}
+          onChange={onChange}
           placeholder="http://..."
         />
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlTextarea1">
         <Form.Label>Информация за продукта</Form.Label>
         <Form.Control
+          className="form-textarea"
           as="textarea"
           name="description"
-          placeholder="...добави"
+          placeholder="добави..."
           value={formValues.description}
-          onChange={onChangeHandler}
+          onChange={onChange}
         />
       </Form.Group>
       <Button className="add-button" type="submit">
@@ -53,4 +61,4 @@ const AddInfo = ({ createItem }) => {
   //   Submit
   // </Button>
 };
-export default AddInfo;
+export default CreateItem;

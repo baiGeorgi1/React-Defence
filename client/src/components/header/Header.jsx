@@ -1,80 +1,97 @@
 import { Link } from "react-router-dom";
 import "./Header.Module.css";
+import { useContext } from "react";
+import Authentication from "../../contexts/auth";
 
 const Header = () => {
+  const { isAuthenticated, email } = useContext(Authentication);
+
+  const REGEX = /^[a-zA-z0-9.]+/g;
+  const name = email?.match(REGEX);
   return (
     <header>
-      <div className="header">
-        <div className="row d_flex">
-          <div className=" col-md-2 col-sm-3 col logo_section">
-            <div className="logo">
-              <Link to="/">
-                <img
-                  width="140px"
-                  height="100px"
-                  src="images/honey.png"
-                  alt="Honey"
-                />
-              </Link>
-            </div>
-          </div>
+      <div className="navbar">
+        <div className="logo">
+          <Link to="/">
+            <img
+              width="140px"
+              height="100px"
+              src="images/honey.png"
+              alt="Honey"
+            />
+          </Link>
+        </div>
+        <div className="navigation">
+          <div className="nav-btns">
+            <ul className="">
+              <li className=" nav-item">
+                <Link className="" to="/">
+                  Начало
+                </Link>
+              </li>
 
-          <nav className="navigation navbar navbar-expand-md navbar-dark ">
-            <div className="nav-btns">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item active ">
-                  <Link className="nav-link" to="/">
-                    Начало
-                  </Link>
-                </li>
-
-                <li className="nav-item">
-                  <Link className="nav-link" to="/catalog">
-                    Catalog
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/add">
+              <li className="nav-items">
+                <Link className="" to="/catalog">
+                  Каталог
+                </Link>
+              </li>
+              {isAuthenticated && (
+                <li className="nav-items">
+                  <Link className="" to="/add">
                     Добави
                   </Link>
                 </li>
-                <li className="nav-item ">
-                  <Link className="nav-link" to="/about">
-                    About
-                  </Link>
-                </li>
+              )}
 
-                <li className="nav-item">
-                  <Link className="nav-link" to="/contact-us">
-                    Contact Us
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/login">
-                    Влез
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/contact-us">
-                    Register
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/contact-us">
-                    logout
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="#">
-                    <input type="text" placeholder="Search.." name="search" />
-                    <button type="submit">
-                      <i className="fa fa-search"></i>
-                    </button>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
+              {/* <li className="nav-items">
+                <Link className="" to="/about">
+                  About
+                </Link>
+              </li> */}
+
+              <li className="nav-items">
+                <Link className="" to="/contact-us">
+                  Contact Us
+                </Link>
+              </li>
+              {!isAuthenticated && (
+                <>
+                  <li className="nav-items">
+                    <Link className="items" to="/users/login">
+                      Влез
+                    </Link>
+                  </li>
+
+                  <li className="nav-items">
+                    <Link className="" to="/users/register">
+                      Register
+                    </Link>
+                  </li>
+                </>
+              )}
+              {isAuthenticated && (
+                <>
+                  <li className="nav-items">
+                    <Link className="" to="/users/logout">
+                      изход
+                    </Link>
+                  </li>
+                  <li className="welcome">
+                    <span>Здравей, {name}!</span>
+                  </li>
+                </>
+              )}
+
+              <li className="nav-items">
+                <Link to="#">
+                  <input type="text" placeholder="Search.." name="search" />
+                  <button type="submit">
+                    <i className="fa fa-search"></i>
+                  </button>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>

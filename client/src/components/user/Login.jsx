@@ -9,16 +9,13 @@ const Login = () => {
 
   const onClick = () => {
     setSee((see) => (see = !see));
-    if (see) {
-    }
   };
 
   return (
     <Modal.Dialog show={true}>
       <Modal.Body>
         <form action="" method="POST">
-          {" "}
-          <h3>login</h3>
+          <h3>{see ? "Вход" : "Регистрация"}</h3>
           <div className="txt_field">
             <input type="text" name="text" required />
             <span></span>

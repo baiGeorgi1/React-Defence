@@ -2,7 +2,8 @@ import { useState } from "react";
 
 export const useForm = (values, submitHandler) => {
   const [formValues, setformValues] = useState(values);
-  const onChangeHandler = (e) => {
+
+  const onChange = (e) => {
     setformValues((state) => ({
       ...state,
       [e.target.name]: e.target.value,
@@ -17,7 +18,7 @@ export const useForm = (values, submitHandler) => {
   };
   return {
     formValues,
-    onChangeHandler,
+    onChange,
     onSubmit,
   };
 };

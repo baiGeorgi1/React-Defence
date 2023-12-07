@@ -1,9 +1,5 @@
+import Spinner from "react-bootstrap/Spinner";
+
 export default function () {
-  return (
-    <div className="loader_bg">
-      <div className="loader">
-        <img src="images/loading.gif" alt="#" />
-      </div>
-    </div>
-  );
+  return <Spinner animation="grow" />;
 }
