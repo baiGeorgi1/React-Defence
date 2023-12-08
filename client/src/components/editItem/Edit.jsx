@@ -60,9 +60,14 @@ const EditItem = () => {
           onChange={onChange}
         />
       </Form.Group>
-      <Button className="add-button" type="submit">
-        Промени
-      </Button>
+      <div className="my_buttons">
+        <Button className="edit" type="submit">
+          Промени
+        </Button>
+        <Button className="back" type="submit">
+          Назад
+        </Button>
+      </div>
     </Form>
   );
   // <Button variant="primary" type="submit">
