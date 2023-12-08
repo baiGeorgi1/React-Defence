@@ -17,7 +17,16 @@ export const getItem = async (gameId) => {
 
 export const addItem = async (formValues) => {
   const result = await request.post(URL, formValues);
-  console.log(result);
+
 
   return result;
 };
+export const editItem = async (values, itemId) => {
+  const result = request.put(`${URL}/${itemId}`, values);
+  return result;
+};
+// export const deleteItem = async (itemId) => {
+//   //console.log(itemId);
+//   const result = await request.del(`${URL}/${itemId}`);
+//   return result;
+// };

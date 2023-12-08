@@ -10,6 +10,7 @@ export default function More() {
   const { isAuthenticated, userId } = useContext(Authentication);
   const [item, setItem] = useState({});
   const { itemId } = useParams();
+  const { DeleteItemHandler } = useContext(Authentication);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,6 +26,9 @@ export default function More() {
   const editHandler = () => {
     navigate(`/edit/${itemId}`);
   };
+  const onDelete = async () => {
+    console.log(itemId);
+  };
 
   return (
     <div>
@@ -38,13 +42,17 @@ export default function More() {
               <>
                 {isOwner && (
                   <>
-                    <button className="about-btns" id="delete" to="about.html">
+                    <button
+                      className="about-btns"
+                      id="delete"
+                      to="about.html"
+                      onClick={onDelete}
+                    >
                       Изтрий
                     </button>
                     <button
                       className="about-btns"
                       id="edit"
-                      // to={`/edit/${itemId}`}
                       onClick={editHandler}
                     >
                       Промени

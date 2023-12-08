@@ -3,21 +3,29 @@ import Form from "react-bootstrap/Form";
 import Authentication from "../../contexts/auth";
 
 import { useForm } from "../../hooks/useForm";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import * as itemService from "../../API/itemApi";
 
 import "./Edit.Module.css";
 
 const EditItem = () => {
-  const { CreateItemHandler } = useContext(Authentication);
+  const { EditItemHandler } = useContext(Authentication);
+  const { itemId } = useParams();
+  const [item, setItem] = useState({
+    name: "",
+    imageUrl: "",
+    description: "",
+  });
 
-  const { formValues, onChange, onSubmit } = useForm(
-    {
-      name: "",
-      imageUrl: "",
-      description: "",
-    },
-    CreateItemHandler,
-  );
+  useEffect(() => {
+    itemService.getItem(itemId).then((result) => {
+      setItem(result);
+    });
+  }, [itemId]);
+  //const { CreateItemHandler } = useContext(Authentication);
+
+  const { formValues, onChange, onSubmit } = useForm(item, EditItemHandler);
 
   return (
     <Form className="add-form" onSubmit={onSubmit}>
