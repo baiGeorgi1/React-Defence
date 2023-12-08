@@ -72,7 +72,15 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.my_modal {
+  margin: 0px 390px 0px 390px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Jost", sans-serif;
+  background: linear-gradient(to bottom, #7a4017, #7a4c25, #c07c0e);
+}
 /* a {
   color: #1f1f1f;
   text-decoration: none !important;

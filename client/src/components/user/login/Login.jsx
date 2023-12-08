@@ -15,7 +15,7 @@ const Login = () => {
   );
 
   return (
-    <div className="modal">
+    <div className="my_modal">
       <form onSubmit={onSubmit}>
         <h3>{"Вход"}</h3>
         <div className="txt_field">
