@@ -15,7 +15,7 @@ const Register = () => {
   );
 
   return (
-    <div className="modal">
+    <div className="my_modal">
       <form onSubmit={onSubmit}>
         <h3> Регистрация </h3>
         <div className="txt_field">
