@@ -26,8 +26,14 @@ export default function More() {
   const editHandler = () => {
     navigate(`/edit/${itemId}`);
   };
-  const onDelete = async () => {
-    console.log(itemId);
+  const onDeleteClick = async () => {
+    const isConfirmed = confirm(
+      "Сигурни ли сте,че искате да изтриете този продукт?",
+    );
+    if (isConfirmed) {
+      await itemService.deleteItem(itemId);
+      navigate("/catalog");
+    }
   };
 
   return (
@@ -42,14 +48,14 @@ export default function More() {
               <>
                 {isOwner && (
                   <>
-                    <Link
+                    <button
                       className="about-btns"
                       id="delete"
                       to="about.html"
-                      onClick={onDelete}
+                      onClick={onDeleteClick}
                     >
                       Изтрий
-                    </Link>
+                    </button>
                     <Link
                       className="about-btns"
                       id="edit"

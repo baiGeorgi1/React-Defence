@@ -25,8 +25,7 @@ export const editItem = async (values, itemId) => {
   const result = request.put(`${URL}/${itemId}`, values);
   return result;
 };
-// export const deleteItem = async (itemId) => {
-//   //console.log(itemId);
-//   const result = await request.del(`${URL}/${itemId}`);
-//   return result;
-// };
+export const deleteItem = async (itemId) => {
+  console.log(`${URL}/${itemId}`);
+  request.del(`${URL}/${itemId}`);
+};
