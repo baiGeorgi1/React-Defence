@@ -1,68 +1,55 @@
 .home-page {
-    padding: 0px;
-    display: flex;
-    margin-bottom: 30px;
-    margin-left: 15px;
-    box-sizing: border-box;
+  padding: 0px;
+  display: flex;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  box-sizing: border-box;
 }
 .home-text {
-    box-sizing: content-box;
-    font-weight: 200;
-    width: 60%;
+  box-sizing: content-box;
+  font-weight: 200;
+  width: 60%;
 }
 .home-image {
-    width: 40%;
-    margin: 100px 20px 0px 50px;
+  width: 40%;
+  margin: 100px 20px 0px 50px;
 }
 .home-page h2 {
-    text-align: center;
-    font-size: 3rem;
-    font-family: cursive;
-    color: rgb(255, 102, 0);
+  text-align: center;
+  font-size: 3rem;
+  font-family: cursive;
+  color: rgb(255, 102, 0);
 }
 .home-page p {
-    font-size: 2rem;
-    font-style: italic;
-    font-family: cursive;
-    color: rgb(255, 102, 0);
-    padding-top: 0px !important;
-    line-height: 30px;
+  font-size: 2rem;
+  font-style: italic;
+  font-family: cursive;
+  color: rgb(255, 102, 0);
+  padding-top: 0px !important;
+  line-height: 30px;
 }
 .image-btn {
-    /* font-size: 20px;
+  margin-left: 20px;
+  font-size: 20px;
   background: #d96226;
-  max-width: 171px;
-  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
   height: 48px;
-  display: block;
+  display: inline-block;
   line-height: 48px;
   transition: ease-in all 0.5s;
   font-weight: 450;
-  text-align: center;
+
   color: rgba(255, 255, 255, 0.874);
   z-index: 999;
-  border-radius: 30px; */
-    margin-left: 20px;
-    font-size: 20px;
-    background: #d96226;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
-    text-align: center;
-    height: 48px;
-    display: inline-block;
-    line-height: 48px;
-    transition: ease-in all 0.5s;
-    font-weight: 450;
-
-    color: rgba(255, 255, 255, 0.874);
-    z-index: 999;
-    border-radius: 30px;
+  border-radius: 30px;
 }
 
 .image-btn:hover {
-    background: rgba(7, 168, 28, 0.874);
-    color: #ffffff;
-    transition: ease-in all 0.5s;
+  background: rgba(7, 168, 28, 0.874);
+  color: #ffffff;
+  transition: ease-in all 0.5s;
 }

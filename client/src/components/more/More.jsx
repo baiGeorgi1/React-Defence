@@ -22,6 +22,10 @@ export default function More() {
 
   const isOwner = userId === item._ownerId;
 
+  const editHandler = () => {
+    navigate(`/edit/${itemId}`);
+  };
+
   return (
     <div>
       <div className="about-page">
@@ -37,7 +41,12 @@ export default function More() {
                     <button className="about-btns" id="delete" to="about.html">
                       Изтрий
                     </button>
-                    <button className="about-btns" id="edit" to="about.html">
+                    <button
+                      className="about-btns"
+                      id="edit"
+                      // to={`/edit/${itemId}`}
+                      onClick={editHandler}
+                    >
                       Промени
                     </button>
                   </>

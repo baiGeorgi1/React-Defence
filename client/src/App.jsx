@@ -11,6 +11,7 @@ import More from "./components/more/More";
 import CreateItem from "./components/createItem/CreateItem";
 import Footer from "./components/footer/Footer";
 import ErrorPage from "./components/404/404";
+import EditItem from "./components/editItem/Edit";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/users/*" element={<UserPaths />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/catalog/more/:itemId" element={<More />} />
+          <Route path="/edit/:itemId" element={<EditItem />} />
           <Route path="/add" element={<CreateItem />} />
           <Route path="/*" element={<ErrorPage />} />
           {/* <Route path="/about" element={<About />} /> */}
