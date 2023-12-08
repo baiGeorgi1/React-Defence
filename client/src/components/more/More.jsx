@@ -1,6 +1,6 @@
 import "./More.Module.css";
 
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
 import * as itemService from "../../API/itemApi";
@@ -42,14 +42,14 @@ export default function More() {
               <>
                 {isOwner && (
                   <>
-                    <button
+                    <Link
                       className="about-btns"
                       id="delete"
                       to="about.html"
                       onClick={onDelete}
                     >
                       Изтрий
-                    </button>
+                    </Link>
                     <button
                       className="about-btns"
                       id="edit"
