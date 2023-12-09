@@ -3,10 +3,10 @@ import { useState } from "react";
 
 export default function usePersistedState(key, defaultValue) {
     const [state, setState] = useState(() => {
-        const browserState = localStorage.getItem(key);
+        const localStorageState = localStorage.getItem(key);
 
-        if (browserState) {
-            return JSON.parse(browserState);
+        if (localStorageState) {
+            return JSON.parse(localStorageState);
         }
 
         return defaultValue;

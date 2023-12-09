@@ -32,9 +32,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logoutHandler = () => {
+    localStorage.clear("accessToken");
     setAuth({});
     navigate("/");
-    localStorage.removeItem("accessToken");
   };
   const CreateItemHandler = async (values) => {
     try {
