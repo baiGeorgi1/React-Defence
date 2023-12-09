@@ -38,40 +38,19 @@ export const AuthProvider = ({ children }) => {
   };
   const CreateItemHandler = async (values) => {
     try {
-      const result = await addItem(values);
+      await addItem(values);
 
       navigate("/catalog");
     } catch (error) {
       console.log(error);
     }
   };
-  const EditItemHandler = async (values) => {
-    try {
-      const result = await editItem(values, values._id);
-
-      navigate("/catalog");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  // const DeleteItemHandler = async (itemId) => {
-  //   try {
-
-  //     await deleteItem(itemId);
-
-  //     navigate("/catalog");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   const info = {
     loginHandler,
     registerHandler,
     logoutHandler,
     CreateItemHandler,
-    // DeleteItemHandler,
-    EditItemHandler,
     userId: auth._id,
     email: auth.email,
     isAuthenticated: !!auth.accessToken,

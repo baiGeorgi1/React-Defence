@@ -10,12 +10,13 @@ import * as itemService from "../../API/itemApi";
 import "./Edit.Module.css";
 
 const EditItem = () => {
-  const { EditItemHandler } = useContext(Authentication);
   const { itemId } = useParams();
+  const navigate = useNavigate();
   const [item, setItem] = useState({
     name: "",
     imageUrl: "",
     description: "",
+    itemId: itemId,
   });
 
   useEffect(() => {
@@ -23,29 +24,48 @@ const EditItem = () => {
       setItem(result);
     });
   }, [itemId]);
-  //const { CreateItemHandler } = useContext(Authentication);
 
-  const { formValues, onChange, onSubmit } = useForm(item, EditItemHandler);
+  const goBack = () => {
+    navigate(`/catalog/more/${itemId}`);
+  };
+  const onChange = (e) => {
+    setItem((state) => ({
+      ...state,
+      [e.target.name]: e.target.value,
+    }));
+  };
+  const EditItemHandler = async (e) => {
+    e.preventDefault();
+
+    const values = Object.fromEntries(new FormData(e.currentTarget));
+    try {
+      await itemService.editItem(values, itemId);
+
+      navigate(`/catalog/more/${itemId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
-    <Form className="add-form" onSubmit={onSubmit}>
+    <Form className="add-form" onSubmit={EditItemHandler}>
       <Form.Group controlId="exampleForm.ControlInput1">
         <Form.Label>Име на продукта</Form.Label>
         <Form.Control
           type="text"
+          onChange={onChange}
+          value={item.name}
           name="name"
           placeholder="име..."
-          value={formValues.name}
-          onChange={onChange}
         />
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlInput1">
         <Form.Label>Добави снимка</Form.Label>
         <Form.Control
           type="text"
-          name="imageUrl"
-          value={formValues.imageUrl}
           onChange={onChange}
+          value={item.imageUrl}
+          name="imageUrl"
           placeholder="http://..."
         />
       </Form.Group>
@@ -54,24 +74,27 @@ const EditItem = () => {
         <Form.Control
           className="form-textarea"
           as="textarea"
+          onChange={onChange}
+          value={item.description}
           name="description"
           placeholder="добави..."
-          value={formValues.description}
-          onChange={onChange}
         />
       </Form.Group>
       <div className="my_buttons">
         <Button className="edit" type="submit">
           Промени
         </Button>
-        <Button className="back" type="submit">
+        <Button
+          type="button"
+          className="about-btns"
+          id="back"
+          to="/catalog"
+          onClick={goBack}
+        >
           Назад
         </Button>
       </div>
     </Form>
   );
-  // <Button variant="primary" type="submit">
-  //   Submit
-  // </Button>
 };
 export default EditItem;

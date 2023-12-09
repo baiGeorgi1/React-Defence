@@ -22,6 +22,8 @@ export const addItem = async (formValues) => {
   return result;
 };
 export const editItem = async (values, itemId) => {
+  console.log(itemId);
+
   const result = request.put(`${URL}/${itemId}`, values);
   return result;
 };

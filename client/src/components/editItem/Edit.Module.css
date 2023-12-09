@@ -49,3 +49,23 @@ label {
   height: 250px;
   resize: vertical;
 }
+.about-buttons :hover {
+  text-decoration: none;
+  background: rgba(7, 168, 28, 0.874);
+  color: #ffffff;
+}
+.about-btns {
+  font-size: 20px;
+  background: #d96226;
+  max-width: 171px;
+  width: 100%;
+  height: 48px;
+  display: block;
+  transition: ease-in all 0.5s;
+  font-weight: 450;
+  text-align: center;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.874);
+  z-index: 999;
+  border-radius: 30px;
+}

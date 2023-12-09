@@ -56,20 +56,20 @@ export default function More() {
                     >
                       Изтрий
                     </button>
-                    <Link
+                    <button
                       className="about-btns"
                       id="edit"
                       to={`/edit/${itemId}`}
                       onClick={editHandler}
                     >
                       Промени
-                    </Link>
+                    </button>
                   </>
                 )}
               </>
             )}
 
-            <Link
+            <button
               type="button"
               className="about-btns"
               id="back"
@@ -77,7 +77,7 @@ export default function More() {
               onClick={goBack}
             >
               Назад
-            </Link>
+            </button>
           </div>
         </div>
         <div className="">
