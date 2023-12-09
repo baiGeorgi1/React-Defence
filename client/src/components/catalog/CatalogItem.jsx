@@ -7,7 +7,7 @@ const CatalogItem = (item) => {
       <figure className="item-fig">
         <img className="item-img" src={item.imageUrl} alt={item.name} />
         <h4>{item.name}</h4>
-        <Link className="image-btn" to={`more/${item._id}`}>
+        <Link className="link-btn" to={`more/${item._id}`}>
           Виж
         </Link>
       </figure>
