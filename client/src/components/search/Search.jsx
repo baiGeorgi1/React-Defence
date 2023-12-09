@@ -38,7 +38,7 @@ export default function Search() {
   return (
     <>
       <section className="search">
-        <h1>Search</h1>
+        <h1>Търсене</h1>
 
         <form className="search-form" action="post">
           <input
