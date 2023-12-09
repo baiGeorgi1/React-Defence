@@ -14,6 +14,7 @@ import ErrorPage from "./components/404/404";
 import EditItem from "./components/editItem/Edit";
 import ErrorBoundary from "./components/footer/ErrorBoundry";
 import { AuthGuard } from "./components/guards/AuthGuard";
+import Search from "./components/search/Search";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/users/*" element={<UserPaths />} />
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/catalog/more/:itemId" element={<More />} />
+            <Route path="/search" element={<Search />} />
             <Route
               path="/edit/:itemId"
               element={

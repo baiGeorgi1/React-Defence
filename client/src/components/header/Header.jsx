@@ -72,8 +72,8 @@ const Header = () => {
               )}
 
               <li className="nav-items">
-                <Link to="#">
-                  <input type="text" placeholder="Search.." name="search" />
+                <Link to="/search">
+                  {/* <input type="text" placeholder="Search.." name="search" /> */}
                   <button type="submit">
                     <i className="fa fa-search"></i>
                   </button>
