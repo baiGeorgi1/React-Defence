@@ -9,55 +9,63 @@ const Authentication = createContext();
 Authentication.displayName = "AuthContext";
 
 export const AuthProvider = ({ children }) => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const [auth, setAuth] = usePersistedState("auth", {});
+    const [auth, setAuth] = usePersistedState("auth", {});
 
-  const loginHandler = async (values) => {
-    const result = await authService.login(values.email, values.password);
-    setAuth(result);
-    localStorage.setItem("accessToken", result.accessToken);
-    navigate("/");
-  };
-  //TODO catch error
-  const registerHandler = async (values) => {
-    if (values.password !== values.repeatPass) {
-      throw console.log("error");
-    }
-    const result = await authService.register(values.email, values.password);
+    const loginHandler = async (values) => {
+        if (values.email === "" || values.password === "") {
+            throw alert("Всички полета са задължителни!");
+        }
+        const result = await authService.login(values.email, values.password);
+        setAuth(result);
+        localStorage.setItem("accessToken", result.accessToken);
+        navigate("/");
+    };
+    //TODO catch error
+    const registerHandler = async (values) => {
+        if (values.password !== values.repeatPass) {
+            throw alert("Password don't match!");
+        }
+        const result = await authService.register(
+            values.email,
+            values.password,
+        );
 
-    setAuth(result);
-    localStorage.setItem("accessToken", result.accessToken);
-    navigate("/");
-  };
+        setAuth(result);
+        localStorage.setItem("accessToken", result.accessToken);
+        navigate("/");
+    };
 
-  const logoutHandler = () => {
-    localStorage.clear("accessToken");
-    setAuth({});
-    navigate("/");
-  };
-  const CreateItemHandler = async (values) => {
-    try {
-      await addItem(values);
+    const logoutHandler = () => {
+        localStorage.clear("accessToken");
+        setAuth({});
+        navigate("/");
+    };
+    const CreateItemHandler = async (values) => {
+        try {
+            await addItem(values);
 
-      navigate("/catalog");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+            navigate("/catalog");
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
-  const info = {
-    loginHandler,
-    registerHandler,
-    logoutHandler,
-    CreateItemHandler,
-    userId: auth._id,
-    email: auth.email,
-    isAuthenticated: !!auth.accessToken,
-  };
+    const info = {
+        loginHandler,
+        registerHandler,
+        logoutHandler,
+        CreateItemHandler,
+        userId: auth._id,
+        email: auth.email,
+        isAuthenticated: !!auth.accessToken,
+    };
 
-  return (
-    <Authentication.Provider value={info}>{children}</Authentication.Provider>
-  );
+    return (
+        <Authentication.Provider value={info}>
+            {children}
+        </Authentication.Provider>
+    );
 };
 export default Authentication;
