@@ -17,10 +17,21 @@ export const AuthProvider = ({ children }) => {
         if (values.email === "" || values.password === "") {
             throw alert("Всички полета са задължителни!");
         }
-        const result = await authService.login(values.email, values.password);
-        setAuth(result);
-        localStorage.setItem("accessToken", result.accessToken);
-        navigate("/");
+        try {
+            const result = await authService.login(
+                values.email,
+                values.password,
+            );
+            if (result == undefined) {
+                return {};
+            }
+            setAuth(result);
+            localStorage.setItem("accessToken", result.accessToken);
+            navigate("/");
+        } catch (error) {
+            console.log("here");
+            throw alert("gre6ka");
+        }
     };
     //TODO catch error
     const registerHandler = async (values) => {

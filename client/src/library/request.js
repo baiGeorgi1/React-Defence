@@ -29,11 +29,14 @@ const request = async (method, url, data) => {
     if (response.status === 204) {
         return {};
     }
-    const result = await response.json();
-    //TODO
-    if (!response.ok) {
-        throw result;
+
+    if (response.status == 403) {
+        throw new Error('Грешен потребител или парола!');
     }
+    if (!response.ok) {
+        throw new Error(response.status);
+    }
+    const result = await response.json();
 
     return result;
 };
